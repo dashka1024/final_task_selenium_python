@@ -12,20 +12,14 @@ import time
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer4",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer5",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer6",
-                                  "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7",
+                                  pytest.param("http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer7", marks=pytest.mark.xfail(reason="bug on page")),
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer8",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer9"])
-#@pytest.mark.parametrize('link', ["okay_link",
- 
-#                                 pytest.param("bugged_link", marks=pytest.mark.xfail),
- #                                "okay_link"])
 def test_guest_can_add_product_to_basket(browser,link):
-    #link=f"{link}"
     page = ProductPage(browser, link)
     page.open()
     page.click_add_product_to_basket()
     page.solve_quiz_and_get_code()
-    #time.sleep(60)
     page.should_be_message_added_to_basket()
     page.amount_should_be_equal_to_price()
 
