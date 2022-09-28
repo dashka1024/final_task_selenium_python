@@ -16,6 +16,7 @@ class ProductPageLocators():
     PRICE=(By.CSS_SELECTOR,".product_main .price_color")
     AMOUNT=(By.CSS_SELECTOR,".alert:nth-child(3) .alertinner p strong")
     MESSAGE_AMOUNT_IN_BASKET=(By.CSS_SELECTOR,".alert:nth-child(3) .alertinner p:nth-child(1)")
+    SUCCESS_MESSAGE=(By.CSS_SELECTOR,".alert-success:nth-child(1) .alertinner")
     
 
 
