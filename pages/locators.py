@@ -17,6 +17,15 @@ class ProductPageLocators():
     AMOUNT=(By.CSS_SELECTOR,".alert:nth-child(3) .alertinner p strong")
     MESSAGE_AMOUNT_IN_BASKET=(By.CSS_SELECTOR,".alert:nth-child(3) .alertinner p:nth-child(1)")
     SUCCESS_MESSAGE=(By.CSS_SELECTOR,".alert-success:nth-child(1) .alertinner")
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    GO_TO_BASKET_FROM_HEADER_BUTTON = (By.CSS_SELECTOR, ".btn[href*='basket']")
+
+class BasketPageLocators():
+    PRODUCT_IN_BASKET_ON_BASKET_PAGE = (By.CSS_SELECTOR, ".basket-items")
+    MESSAGE_BASKET_IS_EMPTY = (By.CSS_SELECTOR, "#content_inner > p")
     
 
 
