@@ -13,7 +13,6 @@ class ProductPage(BasePage):
 		assert name == self.browser.find_element(*ProductPageLocators.PRODUCT_IN_BASKET).text, "Incorrect name of product in basket"
 		assert message_added == self.browser.find_element(*ProductPageLocators.MESSAGE_ADDED_TO_BASKET).text, "Incorrect message of added product in basket"
 
-
 	def amount_should_be_equal_to_price(self):
 		price=self.browser.find_element(*ProductPageLocators.PRICE).text
 		message_amount='Your basket total is now ' + price
